@@ -1,3 +1,12 @@
+:root {
+  --primary-color: #0077b6;
+  --secondary-color: #00b4d8;
+  --accent-color: #90e0ef;
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --header-height: 60px;
+}
+
 /* Reset de base */
 * {
   margin: 0;
@@ -7,24 +16,33 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
 /* Header */
 header {
-  background-color: #222;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+
 .logo {
-  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espace entre l'image et le texte */
+  font-size: 1.5rem;
   font-weight: bold;
+}
+
+.logo img {
+  width: 40px; /* adapte selon ton design */
+  height: auto;
 }
 
 nav ul {
@@ -34,7 +52,7 @@ nav ul {
 }
 
 nav a {
-  color: #fff;
+  color: var(--accent-color);
   text-decoration: none;
 }
 
@@ -44,8 +62,8 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #0077b6, #00b4d8);
-  color: white;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--accent-color);
   text-align: center;
   padding: 60px 20px;
   animation: fadeIn 1.5s ease-in-out;
@@ -76,21 +94,21 @@ nav a:hover {
   margin: 5px;
   padding: 10px 15px;
   border: none;
-  background-color: #0077b6;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
   border-radius: 5px;
   cursor: pointer;
 }
 
 .filters button:hover {
-  background-color: #023e8a;
+  background-color: var(--secondary-color);
 }
 
 /* Loader */
 .loader {
   text-align: center;
   font-style: italic;
-  color: #555;
+  color: var(--text-color);
   margin: 20px 0;
 }
 
@@ -109,11 +127,16 @@ nav a:hover {
 }
 
 .project-card {
-  background-color: white;
+  background-color: var(--background-color);
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 15px;
   text-align: center;
+}
+.project-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
 }
 
 .project-card img {
@@ -127,8 +150,8 @@ nav a:hover {
 
 .badge {
   display: inline-block;
-  background-color: #00b4d8;
-  color: white;
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
   padding: 5px 10px;
   margin: 2px;
   border-radius: 4px;
@@ -136,8 +159,8 @@ nav a:hover {
 }
 
 .project-card button {
-  background-color: #0077b6;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -145,14 +168,14 @@ nav a:hover {
 }
 
 .project-card button:hover {
-  background-color: #023e8a;
+  background-color: var(--secondary-color);
 }
 
 /* Aucun projet */
 .no-projects {
   text-align: center;
   font-style: italic;
-  color: #555;
+  color: var(--text-color);
   margin-top: 20px;
 }
 
@@ -171,7 +194,7 @@ nav a:hover {
 }
 
 .modal-content {
-  background-color: white;
+  background-color: var(--background-color);
   padding: 30px;
   border-radius: 8px;
   max-width: 600px;
@@ -189,15 +212,15 @@ nav a:hover {
 
 /* Footer */
 footer {
-  background-color: #222;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
   text-align: center;
   padding: 20px;
   margin-top: 40px;
 }
 
 .socials a {
-  color: #00b4d8;
+  color: var(--secondary-color);
   margin: 0 10px;
   text-decoration: none;
 }
@@ -242,7 +265,7 @@ footer {
   nav {
     display: none;
     width: 100%;
-    background-color: #333;
+    background-color: var(--primary-color);
   }
 
   nav ul {
@@ -284,9 +307,11 @@ footer {
   .modal-content {
     max-width: 90%;
   }
-}
+  .menu-toggle {
+    display: none;
+  }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 600px) {
   .projects-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -307,7 +332,4 @@ nav {
     display: none;
   }
 }
-
-
-
-
+}

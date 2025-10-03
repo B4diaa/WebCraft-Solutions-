@@ -8,14 +8,15 @@
 </head>
 <body>
   <!-- Header -->
-  <header>
-  <div class="logo">WebCraft Solutions</div>
+  <header role="banner">
+  <div class="logo"> <img src="https://t3.ftcdn.net/jpg/00/33/78/26/360_F_33782639_XkgMUZw6rTzsBbDM0ElYmhhXXId9gEo3.jpg" alt="WebCraft Solutions ">WebCraft Solutions </div>
 
   <!-- Toggle pour mobile -->
   <button class="menu-toggle" id="menu-toggle">&#9776;</button>
 
   <!-- Menu de navigation -->
-  <nav id="nav-menu">
+  <nav role="navigation" aria-label="Menu principal" id="nav-menu">
+
     <ul>
       <li><a href="index.html">Accueil</a></li>
       <li><a href="about.html">À propos</a></li>
@@ -25,8 +26,8 @@
 </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <h1>Découvrez nos projets web</h1>
+  <section aria-labelledby="hero-title" class="hero">
+    <h1 id="hero-title">Découvrez nos projets web</h1>
     <p>L'agence WebCraft Solutions vous présente ses réalisations</p>
   </section>
 
@@ -59,7 +60,8 @@
   </div>
 
   <!-- Footer -->
-  <footer>
+  <footer aria-labelledby="footer-title">
+    <h2 id="footer-title">Contactez-nous</h2>
     <p>&copy; 2025 WebCraft Solutions</p>
     <div class="socials">
       <a href="#">Facebook</a>
